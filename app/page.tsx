@@ -1,4 +1,5 @@
 import { Container, Filters, Title, Topbar } from "@/components/shared";
+import { ProductsGroupList } from "@/components/shared/products-group-list";
 
 export default function Home() {
   return (
@@ -15,7 +16,164 @@ export default function Home() {
           </div>
           {/* Список товаров */}
           <div className="flex-1">
-            <div className="flex flex-col gap-16">Список товаров</div>
+            <div className="flex flex-col gap-16 ">
+              <ProductsGroupList
+                title="Пиццы"
+                items={[
+                  {
+                    id: 1,
+                    name: "Бургер-пицца",
+                    imageUrl:
+                      "https://media.dodostatic.net/image/r:584x584/0199b77856ec79a986a2d582c2678fff.avif",
+                    price: 550,
+                    items: [{ price: 550 }],
+                  },
+                  {
+                    id: 1,
+                    name: "Бургер-пицца",
+                    imageUrl:
+                      "https://media.dodostatic.net/image/r:584x584/0199b77856ec79a986a2d582c2678fff.avif",
+                    price: 550,
+                    items: [{ price: 550 }],
+                  },
+                  {
+                    id: 1,
+                    name: "Бургер-пицца",
+                    imageUrl:
+                      "https://media.dodostatic.net/image/r:584x584/0199b77856ec79a986a2d582c2678fff.avif",
+                    price: 550,
+                    items: [{ price: 550 }],
+                  },
+                  {
+                    id: 1,
+                    name: "Бургер-пицца",
+                    imageUrl:
+                      "https://media.dodostatic.net/image/r:584x584/0199b77856ec79a986a2d582c2678fff.avif",
+                    price: 550,
+                    items: [{ price: 550 }],
+                  },
+                  {
+                    id: 1,
+                    name: "Бургер-пицца",
+                    imageUrl:
+                      "https://media.dodostatic.net/image/r:584x584/0199b77856ec79a986a2d582c2678fff.avif",
+                    price: 550,
+                    items: [{ price: 550 }],
+                  },
+                  {
+                    id: 1,
+                    name: "Бургер-пицца",
+                    imageUrl:
+                      "https://media.dodostatic.net/image/r:584x584/0199b77856ec79a986a2d582c2678fff.avif",
+                    price: 550,
+                    items: [{ price: 550 }],
+                  },
+                  {
+                    id: 1,
+                    name: "Бургер-пицца",
+                    imageUrl:
+                      "https://media.dodostatic.net/image/r:584x584/0199b77856ec79a986a2d582c2678fff.avif",
+                    price: 550,
+                    items: [{ price: 550 }],
+                  },
+                  {
+                    id: 1,
+                    name: "Бургер-пицца",
+                    imageUrl:
+                      "https://media.dodostatic.net/image/r:584x584/0199b77856ec79a986a2d582c2678fff.avif",
+                    price: 550,
+                    items: [{ price: 550 }],
+                  },
+                  {
+                    id: 1,
+                    name: "Бургер-пицца",
+                    imageUrl:
+                      "https://media.dodostatic.net/image/r:584x584/0199b77856ec79a986a2d582c2678fff.avif",
+                    price: 550,
+                    items: [{ price: 550 }],
+                  },
+                ]}
+                categoryId={1}
+              />
+              <ProductsGroupList
+                title="Завтрак"
+                items={[
+                  {
+                    id: 1,
+                    name: "Бургер-пицца",
+                    imageUrl:
+                      "https://media.dodostatic.net/image/r:584x584/0199b77856ec79a986a2d582c2678fff.avif",
+                    price: 550,
+                    items: [{ price: 550 }],
+                  },
+                  {
+                    id: 1,
+                    name: "Бургер-пицца",
+                    imageUrl:
+                      "https://media.dodostatic.net/image/r:584x584/0199b77856ec79a986a2d582c2678fff.avif",
+                    price: 550,
+                    items: [{ price: 550 }],
+                  },
+                  {
+                    id: 1,
+                    name: "Бургер-пицца",
+                    imageUrl:
+                      "https://media.dodostatic.net/image/r:584x584/0199b77856ec79a986a2d582c2678fff.avif",
+                    price: 550,
+                    items: [{ price: 550 }],
+                  },
+                  {
+                    id: 1,
+                    name: "Бургер-пицца",
+                    imageUrl:
+                      "https://media.dodostatic.net/image/r:584x584/0199b77856ec79a986a2d582c2678fff.avif",
+                    price: 550,
+                    items: [{ price: 550 }],
+                  },
+                  {
+                    id: 1,
+                    name: "Бургер-пицца",
+                    imageUrl:
+                      "https://media.dodostatic.net/image/r:584x584/0199b77856ec79a986a2d582c2678fff.avif",
+                    price: 550,
+                    items: [{ price: 550 }],
+                  },
+                  {
+                    id: 1,
+                    name: "Бургер-пицца",
+                    imageUrl:
+                      "https://media.dodostatic.net/image/r:584x584/0199b77856ec79a986a2d582c2678fff.avif",
+                    price: 550,
+                    items: [{ price: 550 }],
+                  },
+                  {
+                    id: 1,
+                    name: "Бургер-пицца",
+                    imageUrl:
+                      "https://media.dodostatic.net/image/r:584x584/0199b77856ec79a986a2d582c2678fff.avif",
+                    price: 550,
+                    items: [{ price: 550 }],
+                  },
+                  {
+                    id: 1,
+                    name: "Бургер-пицца",
+                    imageUrl:
+                      "https://media.dodostatic.net/image/r:584x584/0199b77856ec79a986a2d582c2678fff.avif",
+                    price: 550,
+                    items: [{ price: 550 }],
+                  },
+                  {
+                    id: 1,
+                    name: "Бургер-пицца",
+                    imageUrl:
+                      "https://media.dodostatic.net/image/r:584x584/0199b77856ec79a986a2d582c2678fff.avif",
+                    price: 550,
+                    items: [{ price: 550 }],
+                  },
+                ]}
+                categoryId={2}
+              />
+            </div>
           </div>
         </div>
       </Container>

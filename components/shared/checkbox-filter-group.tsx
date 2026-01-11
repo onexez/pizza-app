@@ -9,7 +9,7 @@ type Item = FilterChecboxProps;
 interface Props {
   title: string;
   items: Item[];
-  defaultValues?: string[];
+  defaultValue?: string[];
   defaultItems: Item[];
   limit?: number;
   searchPlaceholder?: string;
@@ -20,7 +20,7 @@ interface Props {
 export const CheckboxFilterGroup: React.FC<Props> = ({
   title,
   items,
-  defaultValues,
+  defaultValue,
   defaultItems,
   limit = 5,
   searchPlaceholder = "Поиск...",
@@ -28,8 +28,15 @@ export const CheckboxFilterGroup: React.FC<Props> = ({
   className,
 }) => {
   const [showAll, setShowAll] = React.useState(false);
+  const [searchValue, setSearchValue] = React.useState("");
 
-  const list = showAll ? items : defaultItems?.slice(0, limit);
+  const onChangeSearchInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(e.target.value);
+  };
+
+  const list = showAll
+    ? items.filter((item) => item.text.toLowerCase().includes(searchValue.toLocaleLowerCase()))
+    : defaultItems.slice(0, limit);
 
   return (
     <div className={className}>
@@ -37,9 +44,14 @@ export const CheckboxFilterGroup: React.FC<Props> = ({
 
       {showAll && (
         <div className="mb-5">
-          <Input placeholder={searchPlaceholder} className="bg-gray-50 border-none" />
+          <Input
+            onChange={onChangeSearchInput}
+            placeholder={searchPlaceholder}
+            className="bg-gray-50 border-none"
+          />
         </div>
       )}
+
       <div className="flex flex-col gap-4 max-h-96 pr-2 overflow-auto scrollbar">
         {list.map((item, index) => (
           <FilterCheckbox
@@ -52,6 +64,13 @@ export const CheckboxFilterGroup: React.FC<Props> = ({
           />
         ))}
       </div>
+      {items.length > limit && (
+        <div className={showAll ? "border-t-neutral-100 mt-4" : ""}>
+          <button onClick={() => setShowAll(!showAll)} className="text-primary mt-3">
+            {showAll ? "Скрыть" : "+ Показать всё"}
+          </button>
+        </div>
+      )}
     </div>
   );
 };

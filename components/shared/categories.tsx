@@ -19,7 +19,7 @@ export const Categories: React.FC<Props> = ({ className }) => {
           )}
           key={index}
         >
-          <button>{cat}</button>
+          <button>{cat} </button>
         </a>
       ))}
     </div>
