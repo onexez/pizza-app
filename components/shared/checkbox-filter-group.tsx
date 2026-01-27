@@ -10,24 +10,24 @@ interface Props {
   title: string;
   items: Item[];
   defaultValue?: string[];
-  defaultItems: Item[];
+  defaultItems?: Item[];
   limit?: number;
   loading?: boolean;
   searchPlaceholder?: string;
-  selectedIds?: Set<string>;
+  selected?: Set<string>;
   onClickCheckbox?: (id: string) => void;
   className?: string;
   name?: string;
 }
 
-export const CheckboxFilterGroup: React.FC<Props> = ({
+export const CheckboxFiltersGroup: React.FC<Props> = ({
   title,
   items,
   defaultValue,
   defaultItems,
   loading,
   name,
-  selectedIds,
+  selected,
   limit = 5,
   searchPlaceholder = "Поиск...",
   onClickCheckbox,
@@ -51,12 +51,14 @@ export const CheckboxFilterGroup: React.FC<Props> = ({
       </div>
     );
   }
+
   const list = showAll
     ? items.filter((item) => item.text.toLowerCase().includes(searchValue.toLocaleLowerCase()))
-    : defaultItems.slice(0, limit);
+    : (defaultItems || items).slice(0, limit);
 
   return (
     <div className={className}>
+      <p className="font-bold mb-3">{title}</p>
       {showAll && (
         <div className="mb-5">
           <Input
@@ -71,7 +73,7 @@ export const CheckboxFilterGroup: React.FC<Props> = ({
         {list.map((item, index) => (
           <FilterCheckbox
             onCheckedChange={() => onClickCheckbox?.(item.value)}
-            checked={selectedIds?.has(item.value)}
+            checked={selected?.has(item.value)}
             key={index}
             value={item.value}
             text={item.text}
