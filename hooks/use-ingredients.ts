@@ -1,8 +1,10 @@
+import { Ingredient } from "@/lib/generated/prisma/client";
 import { Api } from "@/services/api-client";
 import React from "react";
 
 export const useIngredients = () => {
   const [ingredients, setIngredients] = React.useState<Ingredient[]>([]);
+  const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
     async function fetchIngredients() {
@@ -19,4 +21,8 @@ export const useIngredients = () => {
 
     fetchIngredients();
   }, []);
+  return {
+    ingredients,
+    loading,
+  };
 };
